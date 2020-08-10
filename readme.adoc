@@ -4,4 +4,4 @@
 ## 使用方法
 此项目为标准的maven项目，推荐使用IDEA打开。jdk版本为1.8。
 
-resources/schema-h2.sql提供了数据初始化的工作。
+resources/data.sql提供了数据初始化的工作，共初始化了4个学生，详情请查看对应的文件。
