@@ -4,13 +4,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+/**
+ * 学生
+ */
 @Entity
 public class Student {
     @Id
     @GeneratedValue
     private Long id;
+
+    /**
+     * 姓名
+     */
     private String name;
+
+    /**
+     * 学号
+     */
     private String no;
+
+    /**
+     * 体重
+     */
     private Integer weight;
 
     public Student() {

@@ -10,12 +10,20 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.*;
 import java.util.List;
 
+
 @Service
 public class StudentService {
 
     @PersistenceContext
     EntityManager entityManager;
 
+    /**
+     * 获取session
+     * <p>
+     * 在这里获取了session也没有直接使用entityManager的原因是为了更贴近于原生的Hibernate
+     *
+     * @return
+     */
     public Session getSession() {
         return (Session) this.entityManager.getDelegate();
     }
@@ -81,6 +89,7 @@ public class StudentService {
 
     /**
      * between测试
+     *
      * @param minWeight 最小体重
      * @param maxWeight 最大体重
      * @return
@@ -94,6 +103,7 @@ public class StudentService {
 
     /**
      * isNull
+     *
      * @return
      */
     @Transactional
@@ -105,6 +115,7 @@ public class StudentService {
 
     /**
      * 不是null
+     *
      * @return
      */
     @Transactional
@@ -116,6 +127,7 @@ public class StudentService {
 
     /**
      * 传入查询条件的数组
+     *
      * @param name
      * @return
      */
@@ -131,6 +143,7 @@ public class StudentService {
 
     /**
      * 两个条件做OR
+     *
      * @param weight
      * @param name
      * @return
@@ -146,6 +159,7 @@ public class StudentService {
 
     /**
      * 两个查询条件做and
+     *
      * @param weight
      * @param name
      * @return
@@ -161,6 +175,7 @@ public class StudentService {
 
     /**
      * 排序
+     *
      * @return
      */
     @Transactional
@@ -173,6 +188,7 @@ public class StudentService {
 
     /**
      * count
+     *
      * @return
      */
     @Transactional
@@ -182,6 +198,7 @@ public class StudentService {
 
     /**
      * average平均数
+     *
      * @return
      */
     @Transactional
@@ -191,6 +208,7 @@ public class StudentService {
 
     /**
      * 更新操作
+     *
      * @param no
      * @param name
      */
@@ -209,6 +227,7 @@ public class StudentService {
 
     /**
      * 删除操作
+     *
      * @param id
      */
     @Transactional(rollbackFor = Exception.class)
@@ -239,8 +258,6 @@ public class StudentService {
 
         return session.createQuery(cq).getResultList();
     }
-
-
 
 
     /**
