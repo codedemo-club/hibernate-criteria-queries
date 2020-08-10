@@ -1,0 +1,7 @@
+# JPA条件查主询
+文章地址：http://www.codedemo.club/hibernate-criteria-queries/
+
+## 使用方法
+此项目为标准的maven项目，推荐使用IDEA打开。jdk版本为1.8。
+
+resources/schema-h2.sql提供了数据初始化的工作。
